@@ -13,5 +13,5 @@ set filestr[2]=credentials
 set filestr[3]=keys
 
 for /l %%n in (0,1,3) do ( 
-   for /F %%C in ('mountvol ^| find ":"') dir "%%C*.!fileext[%%n]! " /b /s /a-d | findstr !filestr[%%n]! 
+   for /F %%C in ('mountvol ^| find ":"') do dir "%%C*.!fileext[%%n]! " /b /s /a-d | findstr !filestr[%%n]! 
 )
